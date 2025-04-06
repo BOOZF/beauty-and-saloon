@@ -1,7 +1,7 @@
 import Header2 from "@/components/headerStatic";
 import Footer from "@/components/footer";
 import { Button } from "@/components/ui/button";
-import { MapPin, Clock, Phone, Mail } from "lucide-react";
+import { MapPin, Clock, Phone, Mail, Navigation } from "lucide-react";
 
 export default function LocationPage() {
   return (
@@ -23,60 +23,83 @@ export default function LocationPage() {
                 <div className="flex items-start gap-4">
                   <MapPin className="w-5 h-5 mt-1 text-neutral-400" />
                   <div>
-                    <p className="font-light">123 Beauty Street</p>
-                    <p className="font-light">Singapore 123456</p>
+                    <p className="font-light">5500, Jalan Bakar Sampah</p>
+                    <p className="font-light">
+                      71000, Port Dickson Negeri Sembilan
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <MapPin className="w-5 h-5 mt-1 text-neutral-400" />
+                  <div>
+                    <p className="font-light">
+                      3C, Eco Grandeur, No 23-1, Persiaran Eco Grandeur 1
+                    </p>
+                    <p className="font-light">42300 Puncak Alam, Selangor</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
                   <Phone className="w-5 h-5 text-neutral-400" />
-                  <p className="font-light">+65 1234 5678</p>
+                  <p className="font-light">+6014-3994349</p>
                 </div>
                 <div className="flex items-center gap-4">
                   <Mail className="w-5 h-5 text-neutral-400" />
-                  <p className="font-light">hello@bbbeauty.com</p>
+                  <p className="font-light">deebeebee2009@gmail.com</p>
                 </div>
                 <div className="flex items-start gap-4">
                   <Clock className="w-5 h-5 mt-1 text-neutral-400" />
                   <div>
-                    <p className="font-light">Mon - Fri: 10:00 - 20:00</p>
-                    <p className="font-light">Sat - Sun: 10:00 - 18:00</p>
+                    <p className="font-light">Tue - Sat: 10:00 - 17:00</p>
+                    <p className="font-light">Sun : 10:00 - 16:00</p>
                   </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-white p-8 border border-neutral-100">
-              <h2 className="text-2xl font-light tracking-wider mb-6">
-                Getting Here
-              </h2>
-              <div className="space-y-4">
-                <div>
-                  <h3 className="font-medium mb-2">By MRT</h3>
-                  <p className="text-neutral-600">
-                    5 minutes walk from Beauty MRT Station (Exit A)
-                  </p>
-                </div>
-                <div>
-                  <h3 className="font-medium mb-2">By Bus</h3>
-                  <p className="text-neutral-600">
-                    Bus services: 123, 456, 789
-                  </p>
-                </div>
-                <div>
-                  <h3 className="font-medium mb-2">By Car</h3>
-                  <p className="text-neutral-600">
-                    Parking available at Beauty Mall
-                  </p>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Map */}
-          <div className="h-[600px] bg-neutral-100">
-            {/* Replace this div with your actual map component */}
-            <div className="w-full h-full flex items-center justify-center text-neutral-400">
-              Map Component Here
+          {/* Navigation Section */}
+          <div className="flex flex-col items-center justify-center bg-white p-8 border border-neutral-100">
+            <h2 className="text-2xl font-light tracking-wider mb-8">
+              Navigate to Puncak Alam Branch
+            </h2>
+            <div className="space-y-6 w-full max-w-md">
+              <a
+                href="https://waze.com/ul/hw284kdzg5"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block"
+              >
+                <button className="group relative w-full bg-[#7DA0CA] hover:border-white text-white py-4 px-6 rounded-lg transition-all duration-300 overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#7DA0CA] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="relative flex items-center justify-center gap-3">
+                    <Navigation className="w-6 h-6" />
+                    <span className="text-lg font-light tracking-wider">
+                      Navigate with Waze
+                    </span>
+                  </div>
+                </button>
+              </a>
+            </div>
+            <h2 className="text-2xl font-light tracking-wider mb-8 mt-10">
+              Navigate to Port Dickson Branch
+            </h2>
+            <div className="space-y-6 w-full max-w-md">
+              <a
+                href="https://waze.com/ul/hw22qkxgq7 "
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block"
+              >
+                <button className="group relative w-full bg-[#7DA0CA] hover:border-white text-white py-4 px-6 rounded-lg transition-all duration-300 overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#7DA0CA] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="relative flex items-center justify-center gap-3">
+                    <Navigation className="w-6 h-6" />
+                    <span className="text-lg font-light tracking-wider">
+                      Navigate with Waze
+                    </span>
+                  </div>
+                </button>
+              </a>
             </div>
           </div>
         </div>

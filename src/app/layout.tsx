@@ -1,24 +1,36 @@
-import type React from "react"
-import type { Metadata } from "next"
-import { Inter } from "next/font/google"
-import "./globals.css"
+import "./globals.css";
+import localFont from "next/font/local";
+import type { Metadata } from "next";
 
-const inter = Inter({ subsets: ["latin"] })
+const winkySans = localFont({
+  src: [
+    {
+      path: "../fonts/WinkySans-Regular.otf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../fonts/WinkySans-Light.otf",
+      weight: "300",
+      style: "normal",
+    },
+  ],
+  variable: "--font-winky",
+});
 
 export const metadata: Metadata = {
   title: "BB Beauty and Slimming",
-  description: "Modern beauty and slimming treatments for a better you",
-}
+  description: "Experience luxury beauty and slimming treatments",
+};
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode
-}>) {
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" className={winkySans.variable}>
+      <body className="font-winky">{children}</body>
     </html>
-  )
+  );
 }
-

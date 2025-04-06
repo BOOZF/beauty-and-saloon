@@ -8,6 +8,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        winky: ["var(--font-winky)"],
+      },
       keyframes: {
         "fade-in": {
           "0%": { opacity: "0" },
