@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import Header from "@/components/header";
+import Header1 from "@/components/headerTransparent";
 
 // Sample product data - replace with your actual products
 const products = [
@@ -58,10 +58,10 @@ const products = [
 export default function ProductPage() {
   return (
     <div className="min-h-screen bg-[#f9f6f2]">
-      <Header />
+      <Header1 />
       {/* Hero Section */}
-      <section className="relative h-[60vh] w-full">
-        <div className="absolute inset-0 bg-black/40 z-10" />
+      <section className="relative h-screen w-full">
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-transparent z-10" />
         <Image
           src="/profile/productBanner.jpg"
           alt="BB Beauty Products"
@@ -69,7 +69,7 @@ export default function ProductPage() {
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0 z-20 flex flex-col items-center justify-center text-white">
+        <div className="absolute inset-0 z-20 flex flex-col items-center justify-center text-white pt-32">
           <h1 className="text-4xl md:text-5xl font-light tracking-widest mb-4">
             OUR PRODUCTS
           </h1>

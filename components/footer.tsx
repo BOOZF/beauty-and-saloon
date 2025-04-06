@@ -1,4 +1,4 @@
-import Link from "next/link"
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -6,12 +6,22 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
         <div>
           <h3 className="font-medium mb-4">CONTACT US</h3>
-          <address className="not-italic">
-            <p>123 Beauty Street</p>
-            <p>City, State 12345</p>
-            <p className="mt-4">Phone: (123) 456-7890</p>
-            <p>Email: info@bbbeauty.com</p>
-          </address>
+          <div className="space-y-6">
+            <address className="not-italic">
+              <p>5500, Jalan Bakar Sampah</p>
+              <p>71000, Port Dickson Negeri Sembilan</p>
+            </address>
+
+            <address className="not-italic pt-4 border-t border-neutral-300">
+              <p>NO. 37-A, 3, Jalan Deluxe</p>
+              <p>43800 Sepang Selangor</p>
+            </address>
+
+            <div className="pt-4">
+              <p>Phone: (123) 456-7890</p>
+              <p>Email: info@bbbeauty.com</p>
+            </div>
+          </div>
         </div>
 
         <div>
@@ -38,9 +48,11 @@ export default function Footer() {
       </div>
 
       <div className="mt-12 text-center text-sm text-neutral-600">
-        <p>© {new Date().getFullYear()} BB Beauty and Slimming. All rights reserved.</p>
+        <p>
+          © {new Date().getFullYear()} BB Beauty and Slimming. All rights
+          reserved.
+        </p>
       </div>
     </footer>
-  )
+  );
 }
-
