@@ -30,7 +30,7 @@ export default function Header1() {
         </div>
 
         {/* Center Column */}
-        <div className="justify-self-center">
+        <div className="justify-self-center mr-24 sm:mr-0">
           <Link href="/" className="flex flex-col items-center">
             <div className="relative h-48 w-60">
               <Image
