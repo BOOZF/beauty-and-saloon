@@ -23,7 +23,9 @@ export default function LocationPage() {
                 <div className="flex items-start gap-4">
                   <MapPin className="w-5 h-5 mt-1 text-neutral-400" />
                   <div>
-                    <p className="font-light">5500, Jalan Bakar Sampah</p>
+                    <p className="font-light">
+                      8, Taman Mikamas, Jalan Seremban
+                    </p>
                     <p className="font-light">
                       71000, Port Dickson Negeri Sembilan
                     </p>

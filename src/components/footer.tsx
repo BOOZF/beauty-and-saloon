@@ -8,7 +8,7 @@ export default function Footer() {
           <h3 className="font-medium mb-4">CONTACT US</h3>
           <address className="not-italic">
             <span className="flex mb-5 flex-col">
-              <p>5500, Jalan Bakar Sampah </p>
+              <p>8, Taman Mikamas, Jalan Seremban </p>
               <p>71000, Port Dickson Negeri Sembilan</p>
             </span>
             <p>3C, Eco Grandeur, No 23-1, Persiaran Eco Grandeur 1 </p>
