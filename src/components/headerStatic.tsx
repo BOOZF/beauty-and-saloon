@@ -6,9 +6,16 @@ import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import MobileMenu from "./mobile-menu";
 import Image from "next/image";
+import LanguageToggle from "./language-toggle";
+import { useLanguage } from "@/lib/language-context";
+import { translations } from "@/lib/translations";
+import BookingCatalog from "./booking-catalog";
 
 export default function Header2() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isBookingOpen, setIsBookingOpen] = useState(false);
+  const { language } = useLanguage();
+  const t = translations[language];
 
   return (
     <header className="w-full py-4 px-4 md:px-6 bg-white border-b border-neutral-100">
@@ -23,7 +30,7 @@ export default function Header2() {
             <div className="flex items-center gap-2">
               <Menu className="h-6 w-6" />
               <span className="hidden md:inline text-sm uppercase tracking-wider">
-                MENU
+                {t.menu}
               </span>
             </div>
           </button>
@@ -45,17 +52,23 @@ export default function Header2() {
         </div>
 
         {/* Right Column */}
-        <div className="justify-self-end">
+        <div className="justify-self-end flex items-center gap-4">
+          <LanguageToggle />
           <Button
             variant="outline"
             className="rounded-none border-neutral-700 hover:bg-neutral-700 hover:text-white transition-all duration-300"
+            onClick={() => setIsBookingOpen(true)}
           >
-            BOOK NOW
+            {t.bookNow}
           </Button>
         </div>
       </div>
 
       {isMenuOpen && <MobileMenu onClose={() => setIsMenuOpen(false)} />}
+      <BookingCatalog
+        isOpen={isBookingOpen}
+        onClose={() => setIsBookingOpen(false)}
+      />
     </header>
   );
 }

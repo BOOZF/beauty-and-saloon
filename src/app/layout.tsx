@@ -1,6 +1,7 @@
 import "./globals.css";
 import localFont from "next/font/local";
 import type { Metadata } from "next";
+import { LanguageProvider } from "@/lib/language-context";
 
 const winkySans = localFont({
   src: [
@@ -30,7 +31,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={winkySans.variable}>
-      <body className="font-winky">{children}</body>
+      <body className="font-winky">
+        <LanguageProvider>{children}</LanguageProvider>
+      </body>
     </html>
   );
 }

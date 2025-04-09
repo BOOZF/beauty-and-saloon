@@ -1,6 +1,13 @@
+"use client";
+
 import Link from "next/link";
+import { useLanguage } from "@/lib/language-context";
+import { translations } from "@/lib/translations";
 
 export default function Footer() {
+  const { language } = useLanguage();
+  const t = translations[language];
+
   return (
     <footer className="bg-[#e8dfd3] py-12 px-4">
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -8,20 +15,20 @@ export default function Footer() {
           <h3 className="font-medium mb-4">CONTACT US</h3>
           <address className="not-italic">
             <span className="flex mb-5 flex-col">
-              <p>8, Taman Mikamas, Jalan Seremban </p>
-              <p>71000, Port Dickson Negeri Sembilan</p>
+              <p>{t.address1}</p>
+              <p>{t.address2}</p>
             </span>
-            <p>3C, Eco Grandeur, No 23-1, Persiaran Eco Grandeur 1 </p>
-            <p>42300 Puncak Alam, Selangor</p>
-            <p className="mt-4">Phone: (60) 14-3994349</p>
-            <p>Email: deebeebee2009@gmail.com</p>
+            <p>{t.address3}</p>
+            <p>{t.address4}</p>
+            <p className="mt-4">Phone: {t.phone}</p>
+            <p>Email: {t.email}</p>
           </address>
         </div>
 
         <div>
           <h3 className="font-medium mb-4">HOURS</h3>
-          <p>Tuesday - Saturday: 10am - 5pm</p>
-          <p>Sunday: 10am - 4pm</p>
+          <p>{t.hours}</p>
+          <p>{t.hours2}</p>
           <p>Monday: Closing</p>
         </div>
 
@@ -39,10 +46,7 @@ export default function Footer() {
       </div>
 
       <div className="mt-12 text-center text-sm text-neutral-600">
-        <p>
-          © {new Date().getFullYear()} BB Beauty and Slimming. All rights
-          reserved.
-        </p>
+        <p>{t.footerText}</p>
       </div>
     </footer>
   );

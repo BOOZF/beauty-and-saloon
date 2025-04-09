@@ -4,6 +4,8 @@ import { X } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
+import { useLanguage } from "@/lib/language-context";
+import { translations } from "@/lib/translations";
 
 interface MobileMenuProps {
   onClose: () => void;
@@ -11,6 +13,8 @@ interface MobileMenuProps {
 
 export default function MobileMenu({ onClose }: MobileMenuProps) {
   const [isClosing, setIsClosing] = useState(false);
+  const { language } = useLanguage();
+  const t = translations[language];
 
   const handleClose = () => {
     setIsClosing(true);
@@ -44,38 +48,40 @@ export default function MobileMenu({ onClose }: MobileMenuProps) {
           </div>
 
           <div className="mt-4 flex flex-col items-center">
-            <h2 className="text-xl font-light tracking-widest mb-6">MENU</h2>
+            <h2 className="text-xl font-light tracking-widest mb-6">
+              {t.menu}
+            </h2>
 
             <nav className="flex flex-col items-center space-y-4 text-center">
               <Link
                 href="/"
                 className="py-2 text-neutral-700 hover:text-neutral-900 uppercase tracking-wider text-sm"
               >
-                HOME
+                {t.home}
               </Link>
               <Link
                 href="/about"
                 className="py-2 text-neutral-700 hover:text-neutral-900 uppercase tracking-wider text-sm"
               >
-                WHO WE ARE
+                {t.whoWeAre}
               </Link>
               <Link
                 href="/services"
                 className="py-2 text-neutral-700 hover:text-neutral-900 uppercase tracking-wider text-sm"
               >
-                WHAT WE DO
+                {t.whatWeDo}
               </Link>
               <Link
                 href="/location"
                 className="py-2 text-neutral-700 hover:text-neutral-900 uppercase tracking-wider text-sm"
               >
-                WHERE WE ARE
+                {t.whereWeAre}
               </Link>
               <Link
                 href="/product"
                 className="py-2 text-neutral-700 hover:text-neutral-900 uppercase tracking-wider text-sm"
               >
-                SHOP PRODUCTS
+                {t.shopProducts}
               </Link>
             </nav>
 
@@ -85,7 +91,7 @@ export default function MobileMenu({ onClose }: MobileMenuProps) {
                 className="group relative w-full bg-transparent border-2 border-neutral-700 hover:bg-neutral-700 hover:text-white transition-all duration-300 overflow-hidden"
               >
                 <span className="relative z-10 text-sm font-light tracking-widest">
-                  BOOK NOW
+                  {t.bookNow}
                 </span>
                 <div className="absolute inset-0 bg-neutral-700 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
               </Button>

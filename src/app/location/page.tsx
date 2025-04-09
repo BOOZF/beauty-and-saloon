@@ -1,15 +1,22 @@
+"use client";
+
 import Header2 from "@/components/headerStatic";
 import Footer from "@/components/footer";
 import { Button } from "@/components/ui/button";
 import { MapPin, Clock, Phone, Mail, Navigation } from "lucide-react";
+import { useLanguage } from "@/lib/language-context";
+import { translations } from "@/lib/translations";
 
 export default function LocationPage() {
+  const { language } = useLanguage();
+  const t = translations[language];
+
   return (
     <div className="min-h-screen bg-[#f9f6f2]">
       <Header2 />
       <main className="pt-32 px-4 md:px-8 max-w-7xl mx-auto mb-10">
         <h1 className="text-4xl md:text-5xl font-light tracking-widest mb-8 text-center">
-          WHERE WE ARE
+          {t.locationTitle}
         </h1>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -17,42 +24,36 @@ export default function LocationPage() {
           <div className="space-y-8">
             <div className="bg-white p-8 border border-neutral-100">
               <h2 className="text-2xl font-light tracking-wider mb-6">
-                Contact Us
+                {t.contactUs}
               </h2>
               <div className="space-y-4">
                 <div className="flex items-start gap-4">
                   <MapPin className="w-5 h-5 mt-1 text-neutral-400" />
                   <div>
-                    <p className="font-light">
-                      8, Taman Mikamas, Jalan Seremban
-                    </p>
-                    <p className="font-light">
-                      71000, Port Dickson Negeri Sembilan
-                    </p>
+                    <p className="font-light">{t.address1}</p>
+                    <p className="font-light">{t.address2}</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
                   <MapPin className="w-5 h-5 mt-1 text-neutral-400" />
                   <div>
-                    <p className="font-light">
-                      3C, Eco Grandeur, No 23-1, Persiaran Eco Grandeur 1
-                    </p>
-                    <p className="font-light">42300 Puncak Alam, Selangor</p>
+                    <p className="font-light">{t.address3}</p>
+                    <p className="font-light">{t.address4}</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
                   <Phone className="w-5 h-5 text-neutral-400" />
-                  <p className="font-light">+6014-3994349</p>
+                  <p className="font-light">{t.phone}</p>
                 </div>
                 <div className="flex items-center gap-4">
                   <Mail className="w-5 h-5 text-neutral-400" />
-                  <p className="font-light">deebeebee2009@gmail.com</p>
+                  <p className="font-light">{t.email}</p>
                 </div>
                 <div className="flex items-start gap-4">
                   <Clock className="w-5 h-5 mt-1 text-neutral-400" />
                   <div>
-                    <p className="font-light">Tue - Sat: 10:00 - 17:00</p>
-                    <p className="font-light">Sun : 10:00 - 16:00</p>
+                    <p className="font-light">{t.hours}</p>
+                    <p className="font-light">{t.hours2}</p>
                   </div>
                 </div>
               </div>
@@ -62,7 +63,7 @@ export default function LocationPage() {
           {/* Navigation Section */}
           <div className="flex flex-col items-center justify-center bg-white p-8 border border-neutral-100">
             <h2 className="text-2xl font-light tracking-wider mb-8">
-              Navigate to Puncak Alam Branch
+              {t.navigateToPuncakAlam}
             </h2>
             <div className="space-y-6 w-full max-w-md">
               <a
@@ -76,14 +77,14 @@ export default function LocationPage() {
                   <div className="relative flex items-center justify-center gap-3">
                     <Navigation className="w-6 h-6" />
                     <span className="text-lg font-light tracking-wider">
-                      Navigate with Waze
+                      {t.navigateWithWaze}
                     </span>
                   </div>
                 </button>
               </a>
             </div>
             <h2 className="text-2xl font-light tracking-wider mb-8 mt-10">
-              Navigate to Port Dickson Branch
+              {t.navigateToPortDickson}
             </h2>
             <div className="space-y-6 w-full max-w-md">
               <a
@@ -97,7 +98,7 @@ export default function LocationPage() {
                   <div className="relative flex items-center justify-center gap-3">
                     <Navigation className="w-6 h-6" />
                     <span className="text-lg font-light tracking-wider">
-                      Navigate with Waze
+                      {t.navigateWithWaze}
                     </span>
                   </div>
                 </button>
