@@ -39,7 +39,7 @@ export default function Header2() {
         {/* Center Column */}
         <div className="justify-self-center mr-32 sm:mr-0">
           <Link href="/" className="flex flex-col items-center">
-            <div className="relative h-32 w-40 sm:h-48 sm:w-60">
+            <div className="relative h-36 w-40 sm:h-48 sm:w-60">
               <Image
                 src="/profile/logo.svg"
                 alt="BB Beauty and Slimming"

@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 import { useLanguage } from "@/lib/language-context";
 import { translations } from "@/lib/translations";
+import BookingCatalog from "./booking-catalog";
 
 interface MobileMenuProps {
   onClose: () => void;
@@ -13,6 +14,7 @@ interface MobileMenuProps {
 
 export default function MobileMenu({ onClose }: MobileMenuProps) {
   const [isClosing, setIsClosing] = useState(false);
+  const [isBookingOpen, setIsBookingOpen] = useState(false);
   const { language } = useLanguage();
   const t = translations[language];
 
@@ -89,6 +91,7 @@ export default function MobileMenu({ onClose }: MobileMenuProps) {
               <Button
                 variant="outline"
                 className="group relative w-full bg-transparent border-2 border-neutral-700 hover:bg-neutral-700 hover:text-white transition-all duration-300 overflow-hidden"
+                onClick={() => setIsBookingOpen(true)}
               >
                 <span className="relative z-10 text-sm font-light tracking-widest">
                   {t.bookNow}
@@ -99,6 +102,11 @@ export default function MobileMenu({ onClose }: MobileMenuProps) {
           </div>
         </div>
       </div>
+
+      <BookingCatalog
+        isOpen={isBookingOpen}
+        onClose={() => setIsBookingOpen(false)}
+      />
     </>
   );
 }
