@@ -51,7 +51,7 @@ export default function BookingCatalog({
     const encodedMessage = encodeURIComponent(message);
 
     // WhatsApp business number (replace with your actual number)
-    const whatsappNumber = "1234567890"; // Replace with your actual WhatsApp number
+    const whatsappNumber = "60143994349"; // Replace with your actual WhatsApp number
 
     // Open WhatsApp with the pre-filled message
     window.open(
@@ -65,31 +65,33 @@ export default function BookingCatalog({
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="sm:max-w-md">
+      <DialogContent className="sm:max-w-md max-h-[90vh] overflow-y-auto">
         <DialogHeader>
           <DialogTitle>{t.bookAnAppointment}</DialogTitle>
         </DialogHeader>
 
-        <div className="flex flex-col gap-6 py-4">
+        <div className="flex flex-col gap-4 py-2">
           <div>
             <h3 className="text-sm font-medium mb-2">{t.selectDate}</h3>
-            <Calendar
-              mode="single"
-              selected={selectedDate}
-              onSelect={setSelectedDate}
-              className="rounded-md border"
-              disabled={(date) => date < new Date()}
-            />
+            <div className="overflow-x-auto">
+              <Calendar
+                mode="single"
+                selected={selectedDate}
+                onSelect={setSelectedDate}
+                className="rounded-md border"
+                disabled={(date) => date < new Date()}
+              />
+            </div>
           </div>
 
           <div>
             <h3 className="text-sm font-medium mb-2">{t.selectTime}</h3>
-            <div className="grid grid-cols-3 gap-2">
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
               {timeSlots.map((time) => (
                 <Button
                   key={time}
                   variant={selectedTime === time ? "default" : "outline"}
-                  className="w-full"
+                  className="w-full text-xs sm:text-sm py-1 sm:py-2"
                   onClick={() => setSelectedTime(time)}
                 >
                   {time}
@@ -99,7 +101,7 @@ export default function BookingCatalog({
           </div>
 
           <Button
-            className="w-full"
+            className="w-full mt-2"
             disabled={!selectedDate || !selectedTime}
             onClick={handleBooking}
           >

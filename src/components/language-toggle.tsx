@@ -28,7 +28,7 @@ export default function LanguageToggle() {
         }`}
         aria-label="Switch to Chinese"
       >
-        中文
+        CN
       </button>
     </div>
   );

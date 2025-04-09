@@ -37,9 +37,9 @@ export default function Header1() {
         </div>
 
         {/* Center Column */}
-        <div className="justify-self-center mr-24 sm:mr-0">
+        <div className="justify-self-center mr-32 sm:mr-0">
           <Link href="/" className="flex flex-col items-center">
-            <div className="relative h-48 w-60">
+            <div className="relative h-32 w-40 sm:h-48 sm:w-60">
               <Image
                 src="/profile/logo.svg"
                 alt="BB Beauty and Slimming"
@@ -52,11 +52,13 @@ export default function Header1() {
         </div>
 
         {/* Right Column */}
-        <div className="justify-self-end flex items-center gap-4">
-          <LanguageToggle />
+        <div className="justify-self-end flex items-center gap-2 sm:gap-4">
+          <div className="scale-75 sm:scale-100">
+            <LanguageToggle />
+          </div>
           <Button
             variant="outline"
-            className="text-white border-white bg-transparent hover:bg-white/10 transition-all duration-300"
+            className="text-white border-white bg-transparent hover:bg-white/10 transition-all duration-300 text-xs sm:text-sm"
             onClick={() => setIsBookingOpen(true)}
           >
             {t.bookNow}
